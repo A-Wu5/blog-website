@@ -34,7 +34,11 @@ app.post("/edit-post", (req, res) => {
 
 app.get("/view/:title", (req, res) => {
   let title = req.params.title;
-  res.render(`/view/${title}`, { post: blogPosts[title] });
+  res.render(`view-post.ejs`, { post: blogPosts[title] });
+});
+
+app.get("/collection", (req, res) => {
+  res.render("collection.ejs", { posts: blogPosts });
 });
 
 app.get("/new-post", (req, res) => {
@@ -42,7 +46,7 @@ app.get("/new-post", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.render("homepage.ejs", { posts: blogPosts });
+  res.render("homepage.ejs");
 });
 
 app.listen(PORT, () => {

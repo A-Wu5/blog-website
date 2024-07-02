@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+<% var months = ["Jan", "Feb", "March", "April", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"]; %>
+
+<main class="text-start">
+<% if (locals.post){ %>
+    <h1><%= post["title"] %></h1>
+    <p> By <%= post["author_first"] %> <%= post["author_last"]%> </p>
+    <p class="text-info"> Last updated on <%= months[post["date"].getMonth()] %> <%= post["date"].getDate() %>, <%= post["date"].getFullYear() %></p>
+    <p class="text-body-primary"> <%= post["content"] %></p>
+<% } %>
+</main>
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs") %>
+
+<main class="text-start">
+<% if (Object.keys(posts).length > 0){ %>
+    <h2>Latest Posts</h2>
+    <dl>
+    <!-- Iterate through blog posts -->
+    <% for (titles in posts){ %>
+    <a href="/view/<%=posts[titles].title%>">
+        <dt><%= posts[titles].title %></dt>
+    </a>
+    <dd>By <%=posts[titles].author_first %> <%=posts[titles].author_last%></dd>
+    <%} %>
+    </dl>
+    <% } else { %>
+    <h2>No posts created yet</h2>
+<% } %>
+</main>
+
+<%- include("partials/footer.ejs") %>
