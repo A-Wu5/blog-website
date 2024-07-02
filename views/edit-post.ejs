@@ -1,11 +1,15 @@
-<%- include("partials/header.ejs") %> <% if (locals.post){ %>
-<form action="/edit-post" method="post">
-  <h2>Editing <%= post["title"] %></h2>
-  <input type="hidden" name="title" value="<%=post['title']%>" />
-  <p><%= post["first-name] %> <%= post["last-name"]%></p>
-  <textarea name="content"><%=post["content"]%></textarea>
-  <input type="submit" value="Submit" />
-</form>
+<%- include("partials/header.ejs") %> 
+<main class="px-3">
+<% if (locals.post){ %>
+  <form action="/edit-post" method="post">
+    <h2>Editing <%= post["title"] %></h2>
+    <input type="hidden" name="title" value="<%=post['title']%>" />
+    <p><%= post["first-name] %> <%= post["last-name"]%></p>
+    <textarea name="content"><%=post["content"]%></textarea>
+    <input type="submit" value="Submit" />
+  </form>
 <% } else { %>
-<h2>Error</h2>
-<% } %> <%- include("partials/footer.ejs") %>
+    <h2>Error</h2>
+<% } %> 
+</main>
+<%- include("partials/footer.ejs") %>
