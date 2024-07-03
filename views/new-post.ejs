@@ -1,11 +1,20 @@
 <%- include("partials/header.ejs") %>
-<main class="px-3">
+<main class="text-start">
 <form action="/new-post" method="post">
-  <label for="title">Title</label>
-  <input type="text" name="title" placeholder="Title" />
-  <label for="author">Author</label>
-  <input type="text" name="first-name" placeholder="First name" />
-  <input type="text" name="last-name" placeholder="Last name" />
+  <div class="form-floating mb-3">
+    <input class="form-control" type="text" name="title" placeholder="Title" />
+    <label class="text-secondary" for="title">Title</label>
+  </div>
+  <label class="mb-2" for="author">Author</label>
+  <div class="form-floating mb-3">
+    <input class="form-control" type="text" name="first-name" placeholder="First name" />
+    <label for="first-name" class="text-secondary">First Name</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input class="form-control" type="text" name="last-name" placeholder="Last name" />
+    <label class="text-secondary" for="last-name">Last Name</label>
+  </div>
+  
   <textarea name="content" placeholder="Start typing here..."></textarea>
   <input type="submit" value="Submit" />
 </form>
