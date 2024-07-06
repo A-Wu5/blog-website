@@ -1,28 +1,51 @@
 <%- include("partials/header.ejs") %>
 <main class="text-start">
-<form action="/new-post" method="post">
-  <div class="form-floating mb-3">
-    <input class="form-control" type="text" name="title" placeholder="Title" 
-    <%if (locals.post){ %>
-      value=<%=post["title"] %>
-    <%}%> 
-    required/>
-    <label class="text-secondary" for="title">Title</label>
-  </div>
-  <label class="mb-2" for="author">Author</label>
-  <div class="form-floating mb-3">
-    <input class="form-control" type="text" name="first-name" placeholder="First name" required/>
-    <label for="first-name" class="text-secondary">First Name</label>
-  </div>
-  <div class="form-floating mb-3">
-    <input class="form-control" type="text" name="last-name" placeholder="Last name" required/>
-    <label class="text-secondary" for="last-name">Last Name</label>
-  </div>
+<% if (locals.post) { %>
   
-  <textarea name="content" placeholder="Start typing here..." required></textarea>
+  <form action="/new-post" method="post">
+    <p class="text-danger">Error: Title already exists</p>
+    <div class="form-floating mb-3">
+      <input class="form-control" type="text" name="title" placeholder="Title" 
+        value = <%=post["title"]%> required/>
+      <label class="text-secondary" for="title">Title</label>
+    </div>
+    <label class="mb-2" for="author">Author</label>
+    <div class="form-floating mb-3">
+      <input class="form-control" type="text" name="first-name" placeholder="First name" 
+        value= <%=post["first-name"]%> required/>
+      <label for="first-name" class="text-secondary">First Name</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input class="form-control" type="text" name="last-name" placeholder="Last name" 
+        value= <%=post["last-name"]%> required/>
+      <label class="text-secondary" for="last-name">Last Name</label>
+    </div>
+    
+    <textarea name="content" placeholder="Start typing here..." required><%=post["content"]%></textarea>
+    <input type="submit" value="Submit" />
+  
+  </form>
+<% } else { %>
+  <form action="/new-post" method="post">
+    <div class="form-floating mb-3">
+      <input class="form-control" type="text" name="title" placeholder="Title" required/>
+      <label class="text-secondary" for="title">Title</label>
+    </div>
+    <label class="mb-2" for="author">Author</label>
+    <div class="form-floating mb-3">
+      <input class="form-control" type="text" name="first-name" placeholder="First name" required/>
+      <label for="first-name" class="text-secondary">First Name</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input class="form-control" type="text" name="last-name" placeholder="Last name" required/>
+      <label class="text-secondary" for="last-name">Last Name</label>
+    </div>
+    
+    <textarea name="content" placeholder="Start typing here..." required></textarea>
 
-  <input type="submit" value="Submit" />
+    <input type="submit" value="Submit" />
 
-</form>
+  </form>
+<% } %>
 </main>
 <%- include("partials/footer.ejs") %>
