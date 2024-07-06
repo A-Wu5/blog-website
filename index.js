@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post("/new-post", (req, res) => {
   let postTitle = req.body["title"];
   if (postTitle in blogPosts) {
+    res.render("new-post.ejs", { post: req.body });
     //Handle duplicate titles
   } else {
     // insert new post object into blogPosts
