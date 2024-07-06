@@ -27,10 +27,15 @@ app.post("/new-post", (req, res) => {
   }
 });
 
-app.post("/edit-post", (req, res) => {
-  let postTitle = req.body["title"];
-  blogPosts[postTitle][content] = req.body["content"];
+app.post("/edit-post/:title", (req, res) => {
+  let title = req.params.title;
+  blogPosts[title]["content"] = req.body["content"];
   res.render("submitted.ejs");
+});
+
+app.get("/edit-post/:title", (req, res) => {
+  let title = req.params.title;
+  res.render("edit-post.ejs", { post: blogPosts[title] });
 });
 
 app.get("/view/:title", (req, res) => {

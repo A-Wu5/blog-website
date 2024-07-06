@@ -5,7 +5,11 @@
 <% if (locals.post){ %>
     <h1><%= post["title"] %></h1>
     <p> By <%= post["author_first"] %> <%= post["author_last"]%> </p>
-    <p class="text-info"> Last updated on <%= months[post["date"].getMonth()] %> <%= post["date"].getDate() %>, <%= post["date"].getFullYear() %></p>
+    <div class="d-flex justify-content-between">
+        <p class="text-info"> Last updated on <%= months[post["date"].getMonth()] %> 
+        <%= post["date"].getDate() %>, <%= post["date"].getFullYear() %></p>
+        <a href="/edit-post/<%=post["title"]%>">Edit</a>
+    </div>
     <p class="text-body-primary"> <%= post["content"] %></p>
 <% } %>
 </main>

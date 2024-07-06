@@ -1,5 +1,7 @@
 <%- include("partials/header.ejs") %>
 <main class="text-start">
+
+<!-- If title already exists -->
 <% if (locals.post) { %>
   
   <form action="/new-post" method="post">
@@ -26,6 +28,7 @@
   
   </form>
 <% } else { %>
+<!-- If title does NOT already exist -->
   <form action="/new-post" method="post">
     <div class="form-floating mb-3">
       <input class="form-control" type="text" name="title" placeholder="Title" required/>

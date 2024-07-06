@@ -1,10 +1,10 @@
 <%- include("partials/header.ejs") %> 
 <main class="text-start">
 <% if (locals.post){ %>
-  <form action="/edit-post" method="post">
+  <form action="/edit-post/<%=post["title"]%>" method="post">
     <h2>Editing <%= post["title"] %></h2>
-    <input type="hidden" name="title" value="<%=post['title']%>" />
-    <p><%= post["first-name] %> <%= post["last-name"]%></p>
+    <input type="hidden" name="title" value=<%=post['title']%> />
+    <p>By <%= post["author_first"] %> <%= post["author_last"]%></p>
     <textarea name="content"><%=post["content"]%></textarea>
     <input type="submit" value="Submit" />
   </form>
