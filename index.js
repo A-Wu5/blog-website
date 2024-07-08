@@ -33,6 +33,12 @@ app.post("/edit-post/:title", (req, res) => {
   res.render("submitted.ejs");
 });
 
+app.get("/delete-post/:title", (req, res) => {
+  let title = req.params.title;
+  delete blogPosts["title"];
+  res.render("submitted.ejs");
+});
+
 app.get("/edit-post/:title", (req, res) => {
   let title = req.params.title;
   res.render("edit-post.ejs", { post: blogPosts[title] });
