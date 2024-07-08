@@ -35,7 +35,7 @@ app.post("/edit-post/:title", (req, res) => {
 
 app.get("/delete-post/:title", (req, res) => {
   let title = req.params.title;
-  delete blogPosts["title"];
+  delete blogPosts[title];
   res.render("submitted.ejs");
 });
 
