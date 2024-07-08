@@ -7,7 +7,7 @@
     <!-- Iterate through blog posts -->
     <% for (titles in posts){ %>
       <a href="/view/<%=posts[titles].title%>" 
-        class="fs-5 text-light text-decoration-none">
+        class="titles fs-5 text-decoration-none">
         <dt><%= posts[titles].title %></dt>
       </a>
       <dd>By <%=posts[titles].author_first %> <%=posts[titles].author_last%></dd>
