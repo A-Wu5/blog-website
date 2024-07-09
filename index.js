@@ -30,6 +30,7 @@ app.post("/new-post", (req, res) => {
 app.post("/edit-post/:title", (req, res) => {
   let title = req.params.title;
   blogPosts[title]["content"] = req.body["content"];
+  blogPosts[title]["date"] = new Date();
   res.render("submitted.ejs");
 });
 
