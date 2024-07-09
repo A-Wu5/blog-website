@@ -9,8 +9,8 @@
     <p class="text-info"> Last updated on <%= months[post["date"].getMonth()] %> 
       <%= post["date"].getDate() %>, <%= post["date"].getFullYear() %></p>
     <div>
-      <a href="/edit-post/<%=post["title"]%>">Edit</a>
-      <a href="/delete-post/<%=post["title"]%>">Delete</a>
+      <a href="/edit-post/<%=post["title"]%>" class="btn btn-sm btn-info me-1">Edit</a>
+      <a href="/delete-post/<%=post["title"]%>" class="btn btn-sm btn-danger">Delete</a>
     </div>
   </div>
     <p class="text-body-primary lh-base"> <%= post["content"] %></p>

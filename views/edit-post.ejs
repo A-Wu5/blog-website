@@ -6,7 +6,7 @@
     <input type="hidden" name="title" value=<%=post['title']%> />
     <p>By <%= post["author_first"] %> <%= post["author_last"]%></p>
     <textarea name="content"><%=post["content"]%></textarea>
-    <input type="submit" value="Submit" />
+    <input class="submit" type="submit" value="Submit" />
   </form>
 <% } else { %>
     <h2>Error</h2>
