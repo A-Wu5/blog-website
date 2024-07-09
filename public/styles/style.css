@@ -23,10 +23,13 @@ dd {
 
 .titles {
   color: #fff;
+  display: inline-block;
+  border-bottom: 0.25rem solid transparent;
 }
 
 .titles:hover {
   color: #0dcaf0;
+  border-bottom: 0.25rem solid rgba(255, 255, 255, 0.75);
 }
 
 .nav-masthead .nav-link + .nav-link {
